@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Diri Panji Eky Bima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #34deca, #201728);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 10px;
+        }
+        button {
+            background: #047566;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff9900;
+        }
+        .profile-info {
+            display: none;
+            margin-top: 20px;
+        }
+        .profile-info a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        .close-btn {
+            background: #ff4444;
+            margin-top: 10px;
+        }
+        .close-btn:hover {
+            background: #cc0000;
+        }
+        @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background: linear-gradient(135deg, var(--gradColor1, #667eea), var(--gradColor2, #764ba2));
+    background-size: 300% 300%;
+    animation: gradientAnimation 6s infinite linear;
+    transition: background 8s ease-in-out;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="https://freeimage.host/i/398O3B9"><img src="https://iili.io/398O3B9.md.jpg" alt="398O3B9.md.jpg" border="0"></a>
+        <h1>Panji Eky Bima</h1>
+        <p>I am a student learning coding, and also with website help.</p>
+        <button onclick="toggleProfile()">Press Here</button>
+        <div class="profile-info" id="profile-info">
+            <p><strong>Birth Of Date:</strong> 19 Desember 2001</p>
+            <p><strong>Email:</strong> bimabsaku@gmail.com</p>
+            <p><strong>Bio:</strong> Hello My Name Panji Eky Bima, I live in Cilegon,Banten. My hobby is learn something new and make me feel interest. I am a gradute on SMKN 1 Cilegon at a electrical department, and now i'm working on PT. Inti Everspring Indonesia as a Operator Plant Technical. My hobby is playing game or maybe did sport like gym, swimming or anything else. but now my hobby is find something intereset that can make money</p>
+            <p><strong>Social Media:</strong> <a href="https://instagram.com/panjiekybima" target="_blank">Instagram</a></p>
+            <button class="close-btn" onclick="toggleProfile()">Tutup Profil</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleProfile() {
+            var profile = document.getElementById("profile-info");
+            if (profile.style.display === "none" || profile.style.display === "") {
+                profile.style.display = "block";
+            } else {
+                profile.style.display = "none";
+            }
+        }
+
+        let colors = [
+                ["#667eea", "#764ba2"],
+                ["#ff6b6b", "#ffcc00"],
+                ["#00d4ff", "#6a11cb"],
+                ["#ff0099", "#493240"]
+            ];
+
+        let index = 0;
+
+            function changeBackground() {
+        let nextColors = colors[index];
+            document.documentElement.style.setProperty("--gradColor1", nextColors[0]);
+            document.documentElement.style.setProperty("--gradColor2", nextColors[1]);
+
+            index = (index + 1) % colors.length;
+        }
+
+// Ubah warna setiap 5 detik sambil tetap menjalankan animasi CSS
+setInterval(changeBackground, 5000);
+
+
+    </script>
+</body>
+</html>
